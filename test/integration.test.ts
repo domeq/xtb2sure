@@ -95,6 +95,45 @@ test("investment currency is always taken from CLI argument", async () => {
     }
 });
 
+test("investment price is derived from Amount and qty", async () => {
+    const inputPath = path.join(rootDir, "test", "fixtures", "PLN", "input.xlsx");
+    const result = await convertFile({
+        account: "XTB PLN",
+        currency: "PLN",
+        dryRun: true,
+        inputPath,
+    });
+
+    const rows = readCashOperationsSheet(inputPath);
+    const amountById = new Map<string, number>();
+
+    for (const row of rows) {
+        if (classifyOperation(row.Type) === "investment") {
+            amountById.set(row.ID, Math.abs(row.Amount));
+        }
+    }
+
+    for (const line of normalizeEol(result.investmentsCsv).split("\n").slice(1)) {
+        if (!line.trim()) {
+            continue;
+        }
+
+        const cells = parseCsvLine(line);
+        const qty = Math.abs(Number(cells[3]));
+        const price = Number(cells[4]);
+        const name = cells[6] ?? "";
+        const idMatch = name.match(/XTB\s+(\d+)/);
+        assert.ok(idMatch, `Missing XTB ID in row: ${line}`);
+        const id = idMatch[1];
+        assert.ok(id);
+        const expectedAmount = amountById.get(id);
+        assert.ok(typeof expectedAmount === "number", `No amount found for ID ${id}`);
+
+        const actualAmount = qty * price;
+        assert.ok(Math.abs(actualAmount - expectedAmount) < 0.02, `Amount mismatch for ${id}`);
+    }
+});
+
 async function readExpected(relativePath: string): Promise<string> {
     const value = await readFile(path.join(rootDir, relativePath), "utf8");
     return normalizeEol(value);
