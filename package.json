@@ -33,7 +33,7 @@
         "#*": "./src/*"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.2.6",
+        "@biomejs/biome": "2.5.15",
         "@commitlint/cli": "21.2.3",
         "@commitlint/config-conventional": "21.2.3",
         "@release-it/conventional-changelog": "12.0.2",
