@@ -9,7 +9,7 @@ env:
 jobs:
   auto-approve:
     name: Auto PR approval
-    runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write

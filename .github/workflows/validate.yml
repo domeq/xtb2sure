@@ -12,7 +12,7 @@ env:
 
 jobs:
     validate_pr_title:
-        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        runs-on: ubuntu-latest
         name: Validate PR title
         if: github.event.pull_request != null
         timeout-minutes: 5
@@ -21,7 +21,7 @@ jobs:
               uses: ./.github/actions/validate-pr-title
     linters:
         name: Linters
-        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        runs-on: ubuntu-latest
         timeout-minutes: 15
         steps:
             - uses: actions/checkout@v7
@@ -30,7 +30,7 @@ jobs:
               run: npm run lint
     typecheck:
         name: Typecheck
-        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        runs-on: ubuntu-latest
         timeout-minutes: 15
         steps:
             - uses: actions/checkout@v7
@@ -39,7 +39,7 @@ jobs:
               run: npm run typecheck
     knip:
         name: Knip
-        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        runs-on: ubuntu-latest
         timeout-minutes: 15
         steps:
             - uses: actions/checkout@v7
@@ -50,7 +50,7 @@ jobs:
               run: npm run knip -- --production
     tests:
         name: Tests
-        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        runs-on: ubuntu-latest
         timeout-minutes: 15
         steps:
             - uses: actions/checkout@v7

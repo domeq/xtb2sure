@@ -9,7 +9,7 @@ env:
 jobs:
   audit:
     name: Audit
-    runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
