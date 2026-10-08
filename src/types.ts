@@ -1,14 +1,3 @@
-export type OperationType =
-    | "Deposit"
-    | "IKE deposit"
-    | "IKZE deposit"
-    | "Free funds interest"
-    | "Free funds interest tax"
-    | "Withholding tax"
-    | "Stock purchase"
-    | "Stock sell"
-    | "Total";
-
 export interface CashOperationRow {
     Type: string;
     Instrument: string;
@@ -39,7 +28,7 @@ export interface InvestmentRecord {
     name: string;
 }
 
-export interface ConversionIssue {
+interface ConversionIssue {
     rowIndex: number;
     operationId?: string;
     message: string;

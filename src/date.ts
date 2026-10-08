@@ -1,7 +1,7 @@
 const EXCEL_EPOCH_UTC_MS = Date.UTC(1899, 11, 30);
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export function excelSerialToDate(serial: number): Date {
+function excelSerialToDate(serial: number): Date {
     if (!Number.isFinite(serial)) {
         throw new Error(`Invalid Excel serial date: ${serial}`);
     }
@@ -10,7 +10,7 @@ export function excelSerialToDate(serial: number): Date {
     return new Date(utcMs);
 }
 
-export function formatDateYYYYMMDD(date: Date): string {
+function formatDateYYYYMMDD(date: Date): string {
     const year = date.getUTCFullYear();
     const month = String(date.getUTCMonth() + 1).padStart(2, "0");
     const day = String(date.getUTCDate()).padStart(2, "0");
