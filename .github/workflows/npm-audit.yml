@@ -18,10 +18,6 @@ jobs:
         with:
           node-version-file: package.json
           cache: npm
-      - name: Log into Media Artifactory
-        uses: sch-media-actions/artifactory-login@v1
-        with:
-          setup-jfrog-cli: false
-          setup-docker: false
+          registry-url: 'https://registry.npmjs.org'
       - name: NPM Audit
         run: npm audit --omit=dev --audit-level=high
