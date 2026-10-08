@@ -1,0 +1,23 @@
+name: NPM
+
+on:
+  workflow_call:
+
+env:
+  TZ: Europe/Oslo
+
+jobs:
+  audit:
+    name: Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Set correct node version
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+          cache: npm
+          registry-url: 'https://registry.npmjs.org'
+      - name: NPM Audit
+        run: npm audit --omit=dev --audit-level=high
