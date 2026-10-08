@@ -15,7 +15,7 @@ const cliPath = path.join(rootDir, "src", "cli.ts");
 test("CLI validates required --currency and --account args", async () => {
     const result = await runCli([
         "convert",
-        path.join(rootDir, "sample_data", "IKE", "input.xlsx"),
+        path.join(rootDir, "test", "fixtures", "IKE", "input.xlsx"),
         "--currency",
         "USD",
     ]);
@@ -31,7 +31,7 @@ test("CLI generates output files", async () => {
 
     const result = await runCli([
         "convert",
-        path.join(rootDir, "sample_data", "IKE", "input.xlsx"),
+        path.join(rootDir, "test", "fixtures", "IKE", "input.xlsx"),
         "--currency",
         "USD",
         "--account",
@@ -54,7 +54,7 @@ test("CLI dry-run does not create output files", async () => {
 
     const result = await runCli([
         "convert",
-        path.join(rootDir, "sample_data", "IKE", "input.xlsx"),
+        path.join(rootDir, "test", "fixtures", "IKE", "input.xlsx"),
         "--currency",
         "USD",
         "--account",

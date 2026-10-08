@@ -16,11 +16,11 @@ test("IKE fixture conversion matches expected outputs", async () => {
         account: "XTB IKE",
         currency: "USD",
         dryRun: true,
-        inputPath: path.join(rootDir, "sample_data", "IKE", "input.xlsx"),
+        inputPath: path.join(rootDir, "test", "fixtures", "IKE", "input.xlsx"),
     });
 
-    const expectedTransactions = await readExpected("sample_data/IKE/output_transactions.csv");
-    const expectedInvestments = await readExpected("sample_data/IKE/output_investments.csv");
+    const expectedTransactions = await readExpected("test/fixtures/IKE/output_transactions.csv");
+    const expectedInvestments = await readExpected("test/fixtures/IKE/output_investments.csv");
 
     assert.equal(normalizeEol(result.transactionsCsv), expectedTransactions);
     assert.equal(normalizeEol(result.investmentsCsv), expectedInvestments);
@@ -31,19 +31,18 @@ test("PLN fixture conversion matches expected outputs", async () => {
         account: "XTB PLN",
         currency: "PLN",
         dryRun: true,
-        inputPath: path.join(rootDir, "sample_data", "PLN", "input.xlsx"),
+        inputPath: path.join(rootDir, "test", "fixtures", "PLN", "input.xlsx"),
     });
 
-    const expectedTransactions = await readExpected("sample_data/PLN/output_transactions.csv");
-    const expectedInvestmentsRaw = await readExpected("sample_data/PLN/output_investments.csv");
-    const expectedInvestments = rewriteInvestmentCurrency(expectedInvestmentsRaw, "PLN");
+    const expectedTransactions = await readExpected("test/fixtures/PLN/output_transactions.csv");
+    const expectedInvestments = await readExpected("test/fixtures/PLN/output_investments.csv");
 
     assert.equal(normalizeEol(result.transactionsCsv), expectedTransactions);
     assert.equal(normalizeEol(result.investmentsCsv), expectedInvestments);
 });
 
 test("investment ticker regression: output ticker equals source ticker by XTB operation ID", async () => {
-    const inputPath = path.join(rootDir, "sample_data", "PLN", "input.xlsx");
+    const inputPath = path.join(rootDir, "test", "fixtures", "PLN", "input.xlsx");
     const result = await convertFile({
         account: "XTB PLN",
         currency: "PLN",
@@ -83,7 +82,7 @@ test("investment currency is always taken from CLI argument", async () => {
         account: "XTB PLN",
         currency: "PLN",
         dryRun: true,
-        inputPath: path.join(rootDir, "sample_data", "PLN", "input.xlsx"),
+        inputPath: path.join(rootDir, "test", "fixtures", "PLN", "input.xlsx"),
     });
 
     for (const line of normalizeEol(result.investmentsCsv).split("\n").slice(1)) {
@@ -130,21 +129,4 @@ function parseCsvLine(line: string): string[] {
     cells.push(current);
 
     return cells;
-}
-
-function rewriteInvestmentCurrency(csv: string, currency: string): string {
-    const lines = csv.trimEnd().split("\n");
-    const rewritten = [lines[0]];
-
-    for (const line of lines.slice(1)) {
-        if (!line.trim()) {
-            continue;
-        }
-
-        const cells = parseCsvLine(line);
-        cells[2] = currency;
-        rewritten.push(cells.join(","));
-    }
-
-    return `${rewritten.join("\n")}\n`;
 }

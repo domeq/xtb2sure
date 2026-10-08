@@ -1,0 +1,6 @@
+date,amount,name,account,notes
+2026-09-04,5000.00,Deposit,XTB PLN,XTB 910000001: Mock bank deposit txn=MOCK-TXN-001 [subaccount: Investment Plans]
+2026-03-05,0.01,Free funds interest,XTB PLN,XTB 910000002: Mock free-funds interest 2026-02 [subaccount: My Trades]
+2026-03-05,-0.01,Free funds interest tax,XTB PLN,XTB 910000003: Mock free-funds interest tax 2026-02 [subaccount: My Trades]
+2026-01-02,0.93,Withholding tax,XTB PLN,XTB 910000004: mock WHT correction [subaccount: Investment Plans]
+2026-02-26,-11304.00,IKZE deposit,XTB PLN,XTB 910000009: Mock transfer out to IKZE 200002 [subaccount: My Trades]
