@@ -18,9 +18,3 @@ jobs:
         name: Validate
         uses: ./.github/workflows/validate.yml
         secrets: inherit
-
-    renovate:
-        name: Renovate
-        needs: [validate]
-        uses: ./.github/workflows/renovate-auto-approve.yml
-        secrets: inherit
