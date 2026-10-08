@@ -17,6 +17,7 @@ jobs:
         if: github.event.pull_request != null
         timeout-minutes: 5
         steps:
+            - uses: actions/checkout@v7
             - name: Validate PR title
               uses: ./.github/actions/validate-pr-title
     linters:
