@@ -1,0 +1,59 @@
+name: Validate
+
+permissions:
+    id-token: write
+    contents: read
+
+on:
+    workflow_call:
+
+env:
+    TZ: ${{ vars.TZ }}
+
+jobs:
+    validate_pr_title:
+        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        name: Validate PR title
+        if: github.event.pull_request != null
+        timeout-minutes: 5
+        steps:
+            - name: Validate PR title
+              uses: ./.github/actions/validate-pr-title
+    linters:
+        name: Linters
+        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup
+            - name: Lint
+              run: npm run lint
+    typecheck:
+        name: Typecheck
+        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup
+            - name: Typecheck
+              run: npm run typecheck
+    knip:
+        name: Knip
+        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup
+            - name: Knip
+              run: npm run knip
+            - name: Knip (production mode)
+              run: npm run knip -- --production
+    tests:
+        name: Tests
+        runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v7
+            - uses: ./.github/actions/setup
+            - name: Test
+              run: npm test

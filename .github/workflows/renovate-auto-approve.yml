@@ -1,0 +1,41 @@
+name: Renovate Auto Approval
+
+on:
+  workflow_call:
+
+env:
+  TZ: Europe/Oslo
+
+jobs:
+  auto-approve:
+    name: Auto PR approval
+    runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+    permissions:
+      contents: read
+      pull-requests: write
+    if: startsWith(github.head_ref, 'renovate/')
+    steps:
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = context.payload.pull_request.number;
+
+            const { data: pull } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number
+            });
+
+            if (!pull.body || !pull.body.includes('**Automerge**: Enabled.')) {
+              core.info('Automerge not enabled in PR body, skipping approval.');
+              return;
+            }
+
+            await github.rest.pulls.createReview({
+              owner,
+              repo,
+              pull_number,
+              event: "APPROVE"
+            });

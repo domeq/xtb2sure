@@ -1,0 +1,26 @@
+name: PR
+
+on:
+    workflow_dispatch:
+    pull_request:
+
+permissions:
+    id-token: write
+    contents: read
+    pull-requests: write
+
+env:
+    TZ: ${{ vars.TZ }}
+    FORCE_COLOR: 1
+
+jobs:
+    validate:
+        name: Validate
+        uses: ./.github/workflows/validate.yml
+        secrets: inherit
+
+    renovate:
+        name: Renovate
+        needs: [validate]
+        uses: ./.github/workflows/renovate-auto-approve.yml
+        secrets: inherit

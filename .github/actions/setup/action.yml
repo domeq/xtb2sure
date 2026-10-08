@@ -1,0 +1,19 @@
+name: Runtime & application setup
+description: Sets right node version, installs dependencies
+
+runs:
+    using: 'composite'
+    steps:
+        - name: Set correct node version
+          uses: actions/setup-node@v7
+          with:
+              node-version-file: package.json
+              cache: 'npm'
+        - name: Log into Media Artifactory
+          uses: sch-media-actions/artifactory-login@v1
+          with:
+              setup-jfrog-cli: false
+              setup-docker: false
+        - name: Install dependencies
+          run: npm ci --quiet --no-audit --no-fund --ignore-scripts
+          shell: bash

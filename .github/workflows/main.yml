@@ -1,0 +1,27 @@
+name: Main branch
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+    merge_group:
+
+permissions:
+    id-token: write
+    contents: read
+
+env:
+    TZ: ${{ vars.TZ }}
+    FORCE_COLOR: 1
+
+jobs:
+    validate:
+        name: Validate
+        uses: ./.github/workflows/validate.yml
+        secrets: inherit
+
+    npm:
+        name: NPM audit
+        uses: ./.github/workflows/npm-audit.yml
+        secrets: inherit

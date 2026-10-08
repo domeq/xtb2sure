@@ -1,0 +1,27 @@
+name: NPM
+
+on:
+  workflow_call:
+
+env:
+  TZ: Europe/Oslo
+
+jobs:
+  audit:
+    name: Audit
+    runs-on: [self-hosted, ubuntu-latest-no-docker, developer-foundations]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Set correct node version
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+          cache: npm
+      - name: Log into Media Artifactory
+        uses: sch-media-actions/artifactory-login@v1
+        with:
+          setup-jfrog-cli: false
+          setup-docker: false
+      - name: NPM Audit
+        run: npm audit --omit=dev --audit-level=high

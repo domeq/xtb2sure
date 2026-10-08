@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "target": "esnext",
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+        "rootDir": ".",
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": false,
+        "baseUrl": "./",
+        "paths": {
+            "#*": ["./src/*"]
+        }
+    },
+    "include": ["**/*"],
+    "exclude": ["node_modules", "dist"]
+}
