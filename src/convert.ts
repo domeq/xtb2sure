@@ -45,9 +45,10 @@ export function convertRows(rows: CashOperationRow[], options: ConvertOptions): 
                     notes: buildTransactionNotes(row),
                 });
             } else {
-                const { price, qty, qtyHadExplicitDecimal } = parseTradeValues(row.Comment);
+                const { qty, qtyHadExplicitDecimal } = parseTradeValues(row.Comment);
                 const signedQtyValue = row.Type === "Stock sell" ? forceNegative(qty) : forcePositive(qty);
                 const signedQty = formatQtyOutput(signedQtyValue, row.Instrument, qtyHadExplicitDecimal, row.Product);
+                const price = calculateUnitPriceFromAmount(row.Amount, signedQtyValue);
 
                 investments.push({
                     account: options.account,
@@ -96,4 +97,14 @@ function forceNegative(qty: string): string {
 function forcePositive(qty: string): string {
     const num = Math.abs(Number(qty));
     return String(num);
+}
+
+function calculateUnitPriceFromAmount(amount: number, qty: string): string {
+    const qtyNumber = Math.abs(Number(qty));
+    if (!Number.isFinite(amount) || !Number.isFinite(qtyNumber) || qtyNumber === 0) {
+        throw new Error(`Cannot calculate price from amount=${amount} and qty=${qty}`);
+    }
+
+    const price = Math.abs(amount) / qtyNumber;
+    return String(Number(price.toFixed(8)));
 }
