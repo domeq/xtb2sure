@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.2](https://github.com/domeq/xtb2sure/compare/v0.2.1...v0.2.2) (2026-10-09)
+
+### Miscellaneous Chores
+
+* **runtime:** use native type stripping and require Node >=24 ([#15](https://github.com/domeq/xtb2sure/issues/15)) ([e537dc2](https://github.com/domeq/xtb2sure/commit/e537dc2b80f689dcf63d2d09a2401799c93218ac))
+
 ## [0.2.1](https://github.com/domeq/xtb2sure/compare/v0.2.0...v0.2.1) (2026-10-09)
 
 ### Bug Fixes
