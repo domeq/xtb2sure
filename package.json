@@ -11,8 +11,16 @@
     "publishConfig": {
         "access": "public"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/domeq/xtb2sure.git"
+    },
+    "files": [
+        "src",
+        "bin"
+    ],
     "bin": {
-        "xtb2sure": "./src/cli.ts"
+        "xtb2sure": "./bin/xtb2sure.js"
     },
     "scripts": {
         "dev": "node --experimental-transform-types --watch src/index.ts",
