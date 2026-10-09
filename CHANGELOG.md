@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.7](https://github.com/domeq/xtb2sure/compare/v0.2.6...v0.2.7) (2026-10-09)
+
+### Miscellaneous Chores
+
+* **biome:** migrate config to 2.5.15 schema ([#17](https://github.com/domeq/xtb2sure/issues/17)) ([0d75fd8](https://github.com/domeq/xtb2sure/commit/0d75fd8772b2c8bb923076642476afc732b21227))
+
 ## [0.2.6](https://github.com/domeq/xtb2sure/compare/v0.2.5...v0.2.6) (2026-10-09)
 
 ### Miscellaneous Chores
