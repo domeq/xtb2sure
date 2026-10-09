@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.3](https://github.com/domeq/xtb2sure/compare/v0.2.2...v0.2.3) (2026-10-09)
+
+### Bug Fixes
+
+* **publish:** ship compiled output so global install works ([#16](https://github.com/domeq/xtb2sure/issues/16)) ([1e1a750](https://github.com/domeq/xtb2sure/commit/1e1a75066c44f9433d2ed008dbf86448e55b549f))
+
 ## [0.2.2](https://github.com/domeq/xtb2sure/compare/v0.2.1...v0.2.2) (2026-10-09)
 
 ### Miscellaneous Chores
