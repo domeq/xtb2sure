@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1](https://github.com/domeq/xtb2sure/compare/v0.3.0...v0.3.1) (2026-10-09)
+
+### Documentation
+
+* document running CLI from source without build ([106edde](https://github.com/domeq/xtb2sure/commit/106eddeef46071f16ebae6db584a3864d75ce2fa))
+
 ## [0.3.0](https://github.com/domeq/xtb2sure/compare/v0.2.8...v0.3.0) (2026-10-09)
 
 ### Features
