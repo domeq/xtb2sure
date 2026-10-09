@@ -1,6 +1,6 @@
 # xtb2sure
 
-Convert XTB `.xlsx` exports into Sure-compatible CSV files.
+Convert XTB `.xlsx` exports into [Sure.am](https://sure.am/)-compatible CSV files.
 
 ## What it does
 
