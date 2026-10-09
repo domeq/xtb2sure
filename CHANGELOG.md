@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0](https://github.com/domeq/xtb2sure/compare/v0.3.1...v0.4.0) (2026-10-09)
+
+### Features
+
+* support ticker overrides via config file ([#18](https://github.com/domeq/xtb2sure/issues/18)) ([6ca9323](https://github.com/domeq/xtb2sure/commit/6ca932322c405cf40e813648f745221913b70487))
+
 ## [0.3.1](https://github.com/domeq/xtb2sure/compare/v0.3.0...v0.3.1) (2026-10-09)
 
 ### Documentation
