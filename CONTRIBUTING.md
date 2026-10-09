@@ -4,7 +4,7 @@ Thanks for your interest in contributing to `xtb2sure`.
 
 ## Setup
 
-1. Install Node.js 22+.
+1. Install Node.js 24+.
 2. Install dependencies:
 
 ```bash
