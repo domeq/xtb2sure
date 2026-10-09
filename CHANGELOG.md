@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.8](https://github.com/domeq/xtb2sure/compare/v0.2.7...v0.2.8) (2026-10-09)
+
+### Documentation
+
+* add bug report issue template ([aa3d424](https://github.com/domeq/xtb2sure/commit/aa3d424eea135e953cb43f20f8782d35526cc54d))
+* bump required Node.js version to 24 ([45d9520](https://github.com/domeq/xtb2sure/commit/45d9520dcd5133aa6cf6f4ffe5ffbfa690167601))
+* reference Sure.am with link in README ([41b0e43](https://github.com/domeq/xtb2sure/commit/41b0e43e2ac2ade092a4dcce9d462b8a9def0d54))
+
+### Miscellaneous Chores
+
+* remove PRD.md ([adbe3a3](https://github.com/domeq/xtb2sure/commit/adbe3a381198bff31f3530d2150f4b32fdb182b4))
+* remove unused config/default.mjs ([5f04140](https://github.com/domeq/xtb2sure/commit/5f04140801a3d7143a6bad73f4a72756f98989f6))
+
 ## [0.2.7](https://github.com/domeq/xtb2sure/compare/v0.2.6...v0.2.7) (2026-10-09)
 
 ### Miscellaneous Chores
