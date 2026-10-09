@@ -13,11 +13,7 @@
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
         "forceConsistentCasingInFileNames": true,
-        "allowJs": false,
-        "baseUrl": "./",
-        "paths": {
-            "#*": ["./src/*"]
-        }
+        "allowJs": false
     },
     "include": ["**/*"],
     "exclude": ["node_modules", "dist"]
