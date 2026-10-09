@@ -56,7 +56,23 @@ xtb2sure convert report.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
 
 ## Development
 
-Build the compiled output:
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/domeq/xtb2sure.git
+cd xtb2sure
+npm install
+```
+
+Run the CLI directly from source — no build step required (Node.js runs TypeScript natively):
+
+```bash
+node src/cli.ts convert report.xlsx --currency USD --account "XTB IKE"
+```
+
+You can use any CLI flag this way, e.g. `node src/cli.ts --version`.
+
+Build the compiled output (needed for `dist/`, which the published package uses):
 
 ```bash
 npm run build
@@ -66,4 +82,11 @@ Run tests (Node.js test runner):
 
 ```bash
 npm test
+```
+
+Run linting and type checking:
+
+```bash
+npm run lint
+npm run typecheck
 ```
