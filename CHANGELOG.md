@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0](https://github.com/domeq/xtb2sure/compare/v0.2.8...v0.3.0) (2026-10-09)
+
+### Features
+
+* support --version flag ([72a55f3](https://github.com/domeq/xtb2sure/commit/72a55f3a1cb71785223ebbe10d5ed30b7eb70d87))
+
 ## [0.2.8](https://github.com/domeq/xtb2sure/compare/v0.2.7...v0.2.8) (2026-10-09)
 
 ### Documentation
