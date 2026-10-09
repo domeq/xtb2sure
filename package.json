@@ -61,6 +61,6 @@
     "dependencies": {
         "commander": "15.0.0",
         "csv-stringify": "6.9.0",
-        "xlsx": "0.18.5"
+        "@e965/xlsx": "0.20.3"
     }
 }

@@ -1,11 +1,14 @@
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
+import fs from "node:fs";
 import { access, mkdtemp, readFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import xlsx from "xlsx";
+import xlsx from "@e965/xlsx";
+
+xlsx.set_fs(fs);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

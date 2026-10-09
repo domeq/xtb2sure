@@ -1,5 +1,8 @@
-import xlsx from "xlsx";
+import fs from "node:fs";
+import xlsx from "@e965/xlsx";
 import type { CashOperationRow } from "./types.ts";
+
+xlsx.set_fs(fs);
 
 const { readFile, utils } = xlsx;
 
