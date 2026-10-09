@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.6](https://github.com/domeq/xtb2sure/compare/v0.2.5...v0.2.6) (2026-10-09)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript to v7 ([#11](https://github.com/domeq/xtb2sure/issues/11)) ([c09cd9d](https://github.com/domeq/xtb2sure/commit/c09cd9d05d1ef1e85c98cde36d42c10d29f9b9cb))
+
 ## [0.2.5](https://github.com/domeq/xtb2sure/compare/v0.2.4...v0.2.5) (2026-10-09)
 
 ### Bug Fixes
