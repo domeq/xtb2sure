@@ -37,6 +37,7 @@ Options:
 - `--strict` — fail on the first conversion issue
 - `--dry-run` — do not write output files
 - `--report <file>` — write conversion report JSON to file
+- `--config <file>` — path to config file (defaults to `~/.config/xtb2sure/config.json`)
 
 Examples:
 
@@ -47,6 +48,22 @@ xtb2sure convert report.xlsx --currency USD --account "XTB IKE"
 ```bash
 xtb2sure convert report.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
 ```
+
+## Configuration
+
+Some XTB tickers differ from the tickers used by Sure.am's providers. You can override exported tickers via a JSON config file at `~/.config/xtb2sure/config.json` (or `$XDG_CONFIG_HOME/xtb2sure/config.json` when set):
+
+```json
+{
+  "tickerOverrides": {
+    "IPOL.UK": "IPOL.L"
+  }
+}
+```
+
+Keys are the XTB ticker, values are the Sure.am ticker. Overrides apply to the investments CSV only; unmatched tickers are exported unchanged.
+
+Use `--config <file>` to load a config file from a different location.
 
 ## Exit codes
 

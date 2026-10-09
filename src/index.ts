@@ -14,6 +14,7 @@ export interface ConvertFileOptions {
     strict?: boolean;
     dryRun?: boolean;
     report?: string;
+    tickerOverrides?: Record<string, string>;
 }
 
 export interface ConvertFileResult {
@@ -40,6 +41,7 @@ export async function convertFile(options: ConvertFileOptions): Promise<ConvertF
         account: options.account,
         currency: options.currency,
         strict: Boolean(options.strict),
+        tickerOverrides: options.tickerOverrides,
     });
 
     const transactionsCsv = transactionsToCsv(result.transactions);
