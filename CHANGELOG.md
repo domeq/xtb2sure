@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.5](https://github.com/domeq/xtb2sure/compare/v0.2.4...v0.2.5) (2026-10-09)
+
+### Bug Fixes
+
+* **deps:** replace dependency xlsx with @e965/xlsx 0.20.3 ([#4](https://github.com/domeq/xtb2sure/issues/4)) ([daf1121](https://github.com/domeq/xtb2sure/commit/daf1121bc46c26e96f0db4bc0157c48483954af6))
+
 ## [0.2.4](https://github.com/domeq/xtb2sure/compare/v0.2.3...v0.2.4) (2026-10-09)
 
 ### Miscellaneous Chores
