@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
+import { createRequire } from "node:module";
 import process from "node:process";
 import { Command, CommanderError } from "commander";
 import { convertFile } from "./index.ts";
+
+const require = createRequire(import.meta.url);
+const { version } = require("../package.json") as { version: string };
 
 const EXIT_SUCCESS = 0;
 const EXIT_CONVERSION_FAILURE = 1;
@@ -26,6 +30,7 @@ async function main(argv: string[]): Promise<number> {
     program
         .name("xtb2sure")
         .description("Convert XTB .xlsx exports into Sure-compatible CSV files")
+        .version(version)
         .showHelpAfterError()
         .exitOverride();
 
@@ -81,7 +86,7 @@ async function main(argv: string[]): Promise<number> {
         return exitCode;
     } catch (error) {
         if (error instanceof CommanderError) {
-            if (error.code === "commander.helpDisplayed") {
+            if (error.code === "commander.helpDisplayed" || error.code === "commander.version") {
                 return EXIT_SUCCESS;
             }
 
