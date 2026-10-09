@@ -11,7 +11,7 @@ Convert XTB `.xlsx` exports into Sure-compatible CSV files.
 
 ## Requirements
 
-- Node.js 24
+- Node.js 24+
 
 ## Install
 
@@ -22,7 +22,7 @@ npm install
 ## Usage
 
 ```bash
-node --experimental-transform-types ./src/cli.ts convert <input.xlsx> --currency <CODE> --account "<ACCOUNT_NAME>"
+node ./src/cli.ts convert <input.xlsx> --currency <CODE> --account "<ACCOUNT_NAME>"
 ```
 
 Options:
@@ -37,11 +37,11 @@ Options:
 Examples:
 
 ```bash
-node --experimental-transform-types ./src/cli.ts convert sample_data/IKE/input.xlsx --currency USD --account "XTB IKE"
+node ./src/cli.ts convert sample_data/IKE/input.xlsx --currency USD --account "XTB IKE"
 ```
 
 ```bash
-node --experimental-transform-types ./src/cli.ts convert sample_data/PLN/input.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
+node ./src/cli.ts convert sample_data/PLN/input.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
 
 Or via npm script:
 

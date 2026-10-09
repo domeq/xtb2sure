@@ -7,7 +7,7 @@ runs:
     - name: Set correct node version
       uses: actions/setup-node@v7
       with:
-        node-version: 24.x
+        node-version-file: package.json
     - name: Install commitlint
       run: npm install -g @commitlint/cli @commitlint/config-conventional
       shell: bash

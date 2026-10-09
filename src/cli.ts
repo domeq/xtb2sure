@@ -1,4 +1,4 @@
-#!/usr/bin/env -S node --experimental-transform-types
+#!/usr/bin/env node
 
 import process from "node:process";
 import { Command, CommanderError } from "commander";

@@ -109,7 +109,7 @@ test("CLI strict mode fails when mapping issue is encountered", async () => {
 
 function runCli(args: string[]): Promise<{ code: number | null; stdout: string; stderr: string }> {
     return new Promise((resolve, reject) => {
-        const child = spawn(process.execPath, ["--experimental-transform-types", cliPath, ...args], {
+        const child = spawn(process.execPath, [cliPath, ...args], {
             cwd: rootDir,
             stdio: ["ignore", "pipe", "pipe"],
         });
