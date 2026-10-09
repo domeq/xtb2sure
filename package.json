@@ -1,5 +1,5 @@
 {
-    "name": "xtb2sure",
+    "name": "@jaskrowo/xtb2sure",
     "version": "0.2.0",
     "description": "Convert XTB .xlsx exports into Sure-compatible CSV files",
     "main": "src/index.ts",
@@ -8,6 +8,9 @@
     },
     "type": "module",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "bin": {
         "xtb2sure": "./src/cli.ts"
     },

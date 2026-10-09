@@ -12,7 +12,8 @@ module.exports = {
         tokenRef: "GITHUB_TOKEN",
     },
     npm: {
-        publish: false,
+        publish: true,
+        skipChecks: true,
     },
     plugins: {
         "@release-it/conventional-changelog": {

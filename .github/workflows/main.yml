@@ -33,6 +33,7 @@ jobs:
         concurrency: ${{ github.workflow }}-release
         permissions:
             contents: write
+            id-token: write
         steps:
         - uses: actions/checkout@v7
           with:
