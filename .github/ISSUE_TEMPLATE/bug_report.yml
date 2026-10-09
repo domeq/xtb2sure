@@ -1,0 +1,47 @@
+name: Bug report
+description: Report an import that is not producing the expected output
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the problem with the import.
+    validations:
+      required: true
+  - type: textarea
+    id: input-file
+    attributes:
+      label: Input file
+      description: |
+        Attach an input file. Ideally anonymized, but it must preserve the
+        headers and the structure of the original `.xlsx` export so we can
+        reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: failing-transactions
+    attributes:
+      label: Failing transactions
+      description: |
+        List the specific transactions that are not importing correctly
+        (e.g. by date, symbol, and amount).
+    validations:
+      required: true
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: Expected output
+      description: |
+        Describe the expected result. Include the expected CSV rows and/or
+        screenshots of how the transaction should appear in the Sure.am app.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Version of `xtb2sure` you are using (e.g. `xtb2sure --version`).
+      placeholder: "0.2.7"
+    validations:
+      required: true
