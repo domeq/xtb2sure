@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.4](https://github.com/domeq/xtb2sure/compare/v0.2.3...v0.2.4) (2026-10-09)
+
+### Miscellaneous Chores
+
+* **bin:** mark xtb2sure shim executable ([a96d63e](https://github.com/domeq/xtb2sure/commit/a96d63e4220345242f034bbbb610e1634863d0fa))
+
 ## [0.2.3](https://github.com/domeq/xtb2sure/compare/v0.2.2...v0.2.3) (2026-10-09)
 
 ### Bug Fixes
