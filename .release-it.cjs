@@ -2,13 +2,12 @@ module.exports = {
     git: {
         // biome-ignore lint/suspicious/noTemplateCurlyInString: release-it placeholders
         commitMessage: "chore: release ${version} \n\n${changelog}",
-        requireBranch: "master",
+        requireBranch: "main",
         requireCleanWorkingDir: true,
         // biome-ignore lint/suspicious/noTemplateCurlyInString: release-it placeholders
         tagName: "v${version}",
     },
     github: {
-        host: "schibsted.ghe.com",
         release: true,
         tokenRef: "GITHUB_TOKEN",
     },
