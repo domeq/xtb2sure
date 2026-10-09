@@ -15,39 +15,37 @@ Convert XTB `.xlsx` exports into Sure-compatible CSV files.
 
 ## Install
 
+Install globally with npm:
+
 ```bash
-npm install
+npm install -g @jaskrowo/xtb2sure
 ```
+
+This makes the `xtb2sure` command available everywhere on your system.
 
 ## Usage
 
 ```bash
-node ./src/cli.ts convert <input.xlsx> --currency <CODE> --account "<ACCOUNT_NAME>"
+xtb2sure convert <input.xlsx> --currency <CODE> --account "<ACCOUNT_NAME>"
 ```
 
 Options:
 
-- `--out-dir <dir>`
-- `--transactions-out <file>`
-- `--investments-out <file>`
-- `--strict`
-- `--dry-run`
-- `--report <file>`
+- `--out-dir <dir>` — output directory for default file names (defaults to the input file's directory)
+- `--transactions-out <file>` — transactions CSV path
+- `--investments-out <file>` — investments CSV path
+- `--strict` — fail on the first conversion issue
+- `--dry-run` — do not write output files
+- `--report <file>` — write conversion report JSON to file
 
 Examples:
 
 ```bash
-node ./src/cli.ts convert sample_data/IKE/input.xlsx --currency USD --account "XTB IKE"
+xtb2sure convert report.xlsx --currency USD --account "XTB IKE"
 ```
 
 ```bash
-node ./src/cli.ts convert sample_data/PLN/input.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
-
-Or via npm script:
-
-```bash
-npm run convert -- sample_data/PLN/input.xlsx --currency PLN --account "XTB PLN"
-```
+xtb2sure convert report.xlsx --currency PLN --account "XTB PLN" --out-dir ./out
 ```
 
 ## Exit codes
@@ -57,6 +55,12 @@ npm run convert -- sample_data/PLN/input.xlsx --currency PLN --account "XTB PLN"
 - `2` usage or config error
 
 ## Development
+
+Build the compiled output:
+
+```bash
+npm run build
+```
 
 Run tests (Node.js test runner):
 
