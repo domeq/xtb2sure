@@ -3,6 +3,7 @@
 import { createRequire } from "node:module";
 import process from "node:process";
 import { Command, CommanderError } from "commander";
+import { ConfigError, loadConfig } from "./config.ts";
 import { convertFile } from "./index.ts";
 
 const require = createRequire(import.meta.url);
@@ -14,6 +15,7 @@ const EXIT_USAGE_ERROR = 2;
 
 interface ConvertCommandOptions {
     account: string;
+    config?: string;
     currency: string;
     dryRun: boolean;
     investmentsOut?: string;
@@ -45,8 +47,11 @@ async function main(argv: string[]): Promise<number> {
         .option("--strict", "Fail on first conversion issue", false)
         .option("--dry-run", "Do not write output files", false)
         .option("--report <file>", "Write conversion report JSON to file")
+        .option("--config <file>", "Path to config file")
         .action(async (inputPath: string, options: ConvertCommandOptions) => {
             try {
+                const config = await loadConfig(options.config);
+
                 const result = await convertFile({
                     account: options.account,
                     currency: options.currency,
@@ -56,6 +61,7 @@ async function main(argv: string[]): Promise<number> {
                     outDir: options.outDir,
                     report: options.report,
                     strict: options.strict,
+                    tickerOverrides: config.tickerOverrides,
                     transactionsOut: options.transactionsOut,
                 });
 
@@ -76,7 +82,7 @@ async function main(argv: string[]): Promise<number> {
                 }
             } catch (error) {
                 console.error(error instanceof Error ? error.message : String(error));
-                exitCode = EXIT_CONVERSION_FAILURE;
+                exitCode = error instanceof ConfigError ? EXIT_USAGE_ERROR : EXIT_CONVERSION_FAILURE;
             }
         });
 

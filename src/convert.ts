@@ -12,6 +12,7 @@ export interface ConvertOptions {
     account: string;
     currency: string;
     strict: boolean;
+    tickerOverrides?: Record<string, string>;
 }
 
 export function convertRows(rows: CashOperationRow[], options: ConvertOptions): ConversionResult {
@@ -57,7 +58,7 @@ export function convertRows(rows: CashOperationRow[], options: ConvertOptions): 
                     name: buildInvestmentName(row),
                     price,
                     qty: signedQty,
-                    ticker: row.Ticker,
+                    ticker: options.tickerOverrides?.[row.Ticker] ?? row.Ticker,
                 });
             }
         } catch (error) {
