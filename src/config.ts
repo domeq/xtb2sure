@@ -13,7 +13,7 @@ export class ConfigError extends Error {
     }
 }
 
-export function resolveConfigPath(cliPath?: string): string {
+function resolveConfigPath(cliPath?: string): string {
     if (cliPath) {
         return path.resolve(cliPath);
     }
