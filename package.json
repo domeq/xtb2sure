@@ -2,7 +2,8 @@
     "name": "@jaskrowo/xtb2sure",
     "version": "0.2.2",
     "description": "Convert XTB .xlsx exports into Sure-compatible CSV files",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "engines": {
         "node": ">=24"
     },
@@ -16,19 +17,21 @@
         "url": "git+https://github.com/domeq/xtb2sure.git"
     },
     "files": [
-        "src",
+        "dist",
         "bin"
     ],
     "bin": {
         "xtb2sure": "./bin/xtb2sure.js"
     },
     "scripts": {
+        "build": "tsc -p tsconfig.build.json",
         "dev": "node --watch src/index.ts",
         "convert": "node ./src/cli.ts convert",
         "format": "biome format --write .",
         "knip": "knip",
         "lint-fix": "biome check --write .",
         "lint": "biome check .",
+        "prepack": "npm run build",
         "prepare": "husky",
         "release": "release-it",
         "start": "node src/index.ts",
@@ -41,7 +44,7 @@
         ]
     },
     "imports": {
-        "#*": "./src/*"
+        "#*": "./dist/*"
     },
     "devDependencies": {
         "@biomejs/biome": "2.5.15",
