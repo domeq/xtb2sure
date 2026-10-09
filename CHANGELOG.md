@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.1](https://github.com/domeq/xtb2sure/compare/v0.2.0...v0.2.1) (2026-10-09)
+
+### Bug Fixes
+
+* **ci,npm:** fix npm+github quirks ([ae1ce42](https://github.com/domeq/xtb2sure/commit/ae1ce428b8d64809e11f3e10d5192dff5e4e56c5))
+
+### Continuous Integration
+
+* automatic npm release ([5263ead](https://github.com/domeq/xtb2sure/commit/5263ead7e1d538f3003ddbfd44c9ca7e4aa4cc71))
+
 ## 0.2.0 (2026-10-09)
 
 ### Features
