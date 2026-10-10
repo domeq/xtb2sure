@@ -1,6 +1,6 @@
 {
     "name": "@jaskrowo/xtb2sure",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Convert XTB .xlsx exports into Sure-compatible CSV files",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
