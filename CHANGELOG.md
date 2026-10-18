@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.2](https://github.com/domeq/xtb2sure/compare/v0.4.1...v0.4.2) (2026-10-18)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency knip to v6.42.0 ([#21](https://github.com/domeq/xtb2sure/issues/21)) ([180a782](https://github.com/domeq/xtb2sure/commit/180a7826f067344ba0f2574f3a907b7b68ef07bb))
+
 ## [0.4.1](https://github.com/domeq/xtb2sure/compare/v0.4.0...v0.4.1) (2026-10-10)
 
 ### Miscellaneous Chores
