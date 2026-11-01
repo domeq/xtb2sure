@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.3](https://github.com/domeq/xtb2sure/compare/v0.4.2...v0.4.3) (2026-11-01)
+
+### Miscellaneous Chores
+
+* **package:** drop ./ prefix from bin path ([0e6650e](https://github.com/domeq/xtb2sure/commit/0e6650e7aaa557502db004a1180bc75380229b03))
+
+### Continuous Integration
+
+* guard release job against stale main and merge_group ([aaf8c46](https://github.com/domeq/xtb2sure/commit/aaf8c46b5763756d445fa5376176c1f6621cc1dc))
+
 ## [0.4.2](https://github.com/domeq/xtb2sure/compare/v0.4.1...v0.4.2) (2026-10-18)
 
 ### Miscellaneous Chores
