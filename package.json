@@ -21,7 +21,7 @@
         "bin"
     ],
     "bin": {
-        "xtb2sure": "./bin/xtb2sure.js"
+        "xtb2sure": "bin/xtb2sure.js"
     },
     "scripts": {
         "build": "tsc -p tsconfig.build.json",
