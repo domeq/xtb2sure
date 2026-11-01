@@ -55,9 +55,9 @@ Some XTB tickers differ from the tickers used by Sure.am's providers. You can ov
 
 ```json
 {
-  "tickerOverrides": {
-    "IPOL.UK": "IPOL.L"
-  }
+    "tickerOverrides": {
+        "IPOL.UK": "IPOL.L"
+    }
 }
 ```
 
