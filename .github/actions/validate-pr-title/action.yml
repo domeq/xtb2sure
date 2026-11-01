@@ -2,17 +2,17 @@ name: Validate PR title
 description: Runs commitlint on the PR title
 
 runs:
-  using: composite
-  steps:
-    - name: Set correct node version
-      uses: actions/setup-node@v7
-      with:
-        node-version-file: package.json
-    - name: Install commitlint
-      run: npm install -g @commitlint/cli @commitlint/config-conventional
-      shell: bash
-    - name: Validate PR title
-      env:
-        PR_TITLE: ${{ github.event.pull_request.title }}
-      run: echo "$PR_TITLE" | npx commitlint
-      shell: bash
+    using: composite
+    steps:
+        - name: Set correct node version
+          uses: actions/setup-node@v7
+          with:
+              node-version-file: package.json
+        - name: Install commitlint
+          run: npm install -g @commitlint/cli @commitlint/config-conventional
+          shell: bash
+        - name: Validate PR title
+          env:
+              PR_TITLE: ${{ github.event.pull_request.title }}
+          run: echo "$PR_TITLE" | npx commitlint
+          shell: bash
