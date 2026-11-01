@@ -29,8 +29,11 @@ jobs:
     release:
         name: Release
         needs: [validate]
+        if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
-        concurrency: ${{ github.workflow }}-release
+        concurrency:
+            group: release
+            cancel-in-progress: false
         permissions:
             contents: write
             id-token: write
@@ -39,6 +42,13 @@ jobs:
               with:
                   fetch-depth: 0
                   token: ${{ secrets.RELEASE_TOKEN }}
+            - name: Ensure this is the latest main
+              run: |
+                  git fetch origin main
+                  if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+                      echo "main has advanced since checkout; skipping release"
+                      exit 0
+                  fi
             - name: Select correct node version, install deps
               uses: ./.github/actions/setup
             - name: Configure git
