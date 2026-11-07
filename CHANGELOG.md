@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.6](https://github.com/domeq/xtb2sure/compare/v0.4.5...v0.4.6) (2026-11-07)
+
+### Bug Fixes
+
+* **deps:** update dependency commander to v15.1.0 ([#32](https://github.com/domeq/xtb2sure/issues/32)) ([749fedc](https://github.com/domeq/xtb2sure/commit/749fedce487b52cec70b886caab5fb300f857c26))
+
 ## [0.4.5](https://github.com/domeq/xtb2sure/compare/v0.4.4...v0.4.5) (2026-11-06)
 
 ### Miscellaneous Chores
