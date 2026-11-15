@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.9](https://github.com/domeq/xtb2sure/compare/v0.4.8...v0.4.9) (2026-11-15)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @biomejs/biome to v2.6.8 ([#36](https://github.com/domeq/xtb2sure/issues/36)) ([718af98](https://github.com/domeq/xtb2sure/commit/718af98a8e91825bd8796c2f2ce170736ffb2908))
+
 ## [0.4.8](https://github.com/domeq/xtb2sure/compare/v0.4.7...v0.4.8) (2026-11-11)
 
 ### Miscellaneous Chores
