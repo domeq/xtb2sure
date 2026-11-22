@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.12](https://github.com/domeq/xtb2sure/compare/v0.4.11...v0.4.12) (2026-11-22)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency release-it to v21.1.3 ([#39](https://github.com/domeq/xtb2sure/issues/39)) ([2bb29ae](https://github.com/domeq/xtb2sure/commit/2bb29ae51d1728eecffc26eef98d02042a606268))
+
 ## [0.4.11](https://github.com/domeq/xtb2sure/compare/v0.4.10...v0.4.11) (2026-11-22)
 
 ### Miscellaneous Chores
