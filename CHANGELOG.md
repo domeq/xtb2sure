@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.11](https://github.com/domeq/xtb2sure/compare/v0.4.10...v0.4.11) (2026-11-22)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency lint-staged to v17.6.2 ([#38](https://github.com/domeq/xtb2sure/issues/38)) ([e4cc587](https://github.com/domeq/xtb2sure/commit/e4cc5875dadebc5ebe9ea240b00ea203594b744a))
+
 ## [0.4.10](https://github.com/domeq/xtb2sure/compare/v0.4.9...v0.4.10) (2026-11-16)
 
 ### Miscellaneous Chores
