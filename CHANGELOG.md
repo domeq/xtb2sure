@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.13](https://github.com/domeq/xtb2sure/compare/v0.4.12...v0.4.13) (2026-11-24)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @types/node to v26.6.7 ([#41](https://github.com/domeq/xtb2sure/issues/41)) ([7968978](https://github.com/domeq/xtb2sure/commit/7968978d770aa383353e66577d12e2ef49d49a7f))
+
 ## [0.4.12](https://github.com/domeq/xtb2sure/compare/v0.4.11...v0.4.12) (2026-11-22)
 
 ### Miscellaneous Chores
