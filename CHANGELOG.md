@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.17](https://github.com/domeq/xtb2sure/compare/v0.4.16...v0.4.17) (2026-11-28)
+
+### Miscellaneous Chores
+
+* **deps:** update commitlint monorepo to v21.3.0 ([#45](https://github.com/domeq/xtb2sure/issues/45)) ([aa0b2ce](https://github.com/domeq/xtb2sure/commit/aa0b2ce1a75a1df7a067c1deec7fd31dbbbdb026))
+
 ## [0.4.16](https://github.com/domeq/xtb2sure/compare/v0.4.15...v0.4.16) (2026-11-28)
 
 ### Miscellaneous Chores
